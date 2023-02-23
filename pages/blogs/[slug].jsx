@@ -5,7 +5,6 @@ import { config, urlFor } from '../../sanity'
 
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import { GetStaticProps } from "next";
 import React from 'react';
 
 function Post({ post }) {        
