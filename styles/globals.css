@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .font-outline-2 {
+      -webkit-text-stroke: 1px white;
+    }
+
+    .hide-overflow {
+      overflow-x: hidden;
+    }
+  }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html, body {
+  position:relative;
+  overflow-x:hidden;
+} 
