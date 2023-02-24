@@ -17,7 +17,7 @@ function Tshirt(tshirt) {
                 <div className='flex my-3 space-x-5'>
                     {tshirt.tshirt.image.map((img, key) => {
                         return (
-                            <button onClick={() => setIndex(key)}>
+                            <button key={key} onClick={() => setIndex(key)}>
                                 <Image className="w-20 border-2 border-neutral-500 bg-neutral-800 p-2 my-2 rounded-xl sm:w-16 sm:my-0 sm:p-1" src={urlFor(img).url()} alt="" />
                             </button>
                         )
