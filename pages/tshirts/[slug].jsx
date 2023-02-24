@@ -3,6 +3,7 @@ import { config, urlFor } from '../../sanity'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { XMarkIcon } from '@heroicons/react/24/solid';
+import Image from 'next/image';
 
 function Tshirt(tshirt) {    
     const [index, setIndex] = useState(0)
@@ -12,12 +13,12 @@ function Tshirt(tshirt) {
         <Navbar />
         <div className='flex flex-col sm:flex-row mx-auto'>
             <div className='flex flex-col justify-between bg-neutral-900 mx-5 p-4 rounded-3xl sm:w-1/2 sm:h-[28rem] md:h-[35rem] xl:w-1/3'>
-                <img className='h-[30rem] my-5 mx-auto sm:h-72 md:h-96' src={urlFor(tshirt.tshirt.image[index]).url()} alt="" />
+                <Image className='h-[30rem] my-5 mx-auto sm:h-72 md:h-96' src={urlFor(tshirt.tshirt.image[index]).url()} alt="" />
                 <div className='flex my-3 space-x-5'>
                     {tshirt.tshirt.image.map((img, key) => {
                         return (
                             <button onClick={() => setIndex(key)}>
-                                <img className="w-20 border-2 border-neutral-500 bg-neutral-800 p-2 my-2 rounded-xl sm:w-16 sm:my-0 sm:p-1" src={urlFor(img).url()} alt="" />
+                                <Image className="w-20 border-2 border-neutral-500 bg-neutral-800 p-2 my-2 rounded-xl sm:w-16 sm:my-0 sm:p-1" src={urlFor(img).url()} alt="" />
                             </button>
                         )
                     })}

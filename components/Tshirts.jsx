@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { config, urlFor } from '../sanity'
@@ -11,7 +12,7 @@ function Tshirts(tshirts) {
           {tshirts.props.map((tshirt) => {
             return (
               <Link href={`tshirts/${tshirt.slug.current}`} className="flex flex-col w-fit mx-5 bg-slate-800 my-5 rounded-xl border-2 border-blue-600 hover:scale-[101%] transition-all cursor-pointer sm:mx-10 md:mx-5 xl:mx-10">
-                <img className='w-52 p-4 sm:w-60 2xl:w-72' src={urlFor(tshirt.image[1]).url()} />
+                <Image className='w-52 p-4 sm:w-60 2xl:w-72' src={urlFor(tshirt.image[1]).url()} />
                 <div className='px-2 py-1 xl:px-3'>
                   <h1 className='text-md font-bold font-mono text-white md:text-lg xl:text-xl'>{tshirt.title}</h1>
                   <h2 className='text-white font-semibold font-mono '>{tshirt.price} €</h2>
